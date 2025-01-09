@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RoiTech Education Solution</title>
+  <!---  <link rel="stylesheet" href="styles.css">-->
+  <style>
+
+    /* Basic reset and styling */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Body styling */
+body {
+    background-color: #ffffff; /* Clean white background */
+    font-family: Arial, sans-serif;
+    color: #333333; /* Default text color */
+    line-height: 1.6;
+}
+
+/* Header Styling */
+header {
+    background-color: #34495e; /* Soft blue background */
+    color: #fff;
+    padding: 20px;
+    text-align: center;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+header nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+#brand-header {
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+
+#nav-links a {
+    color: white;
+    text-decoration: none;
+    padding: 10px 15px;
+    font-size: 1rem;
+    transition: background-color 0.3s ease;
+}
+
+#nav-links a:hover {
+    background-color: #357ABD;
+    border-radius: 5px;
+}
+
+/* Main Content Section */
+main {
+    padding: 40px 20px;
+}
+
+.courses-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 20px;
+    justify-items: center;
+}
+
+.course-card {
+    background-color: #ffffff;
+    border: 1px solid #f1f1f1;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    width: 100%;
+    max-width: 350px;
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.course-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+.course-card h2 {
+    font-size: 1.8rem;
+    color: #333;
+    margin-bottom: 10px;
+}
+
+.course-card p {
+    font-size: 1rem;
+    color: #777;
+    margin-bottom: 20px;
+}
+
+.course-card .price {
+    font-size: 1.2rem;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+
+.course-card ul {
+    list-style-type: disc;
+    margin-left: 20px;
+    text-align: left;
+    font-size: 1rem;
+    color: #555;
+}
+
+.cta-btn {
+    background-color: #4CAF50; /* Green button */
+    color: white;
+    border: none;
+    border-radius: 5px;
+    padding: 12px 30px;
+    font-size: 1.1rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.cta-btn:hover {
+    background-color: #45A049;
+}
+
+/* Footer */
+footer {
+    background-color: #f1f1f1;
+    padding: 20px;
+    text-align: center;
+    color: #333;
+    margin-top: 40px;
+}
+
+footer p {
+    font-size: 1rem;
+    color: #555;
+}
+
+  </style>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+
+<body>
+    <header>
+        <nav>
+            <div id="brand-header">RoiTech Education Solution</div>
+            <div id="nav-links">
+                <a href="/index1.html"><i class="fas fa-key"></i> Login</a>
+                <a href="signup.html"><i class="fas fa-lock"></i> Sign Up</a>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <!-- Course Cards Section -->
+        <div class="courses-container">
+            <div class="course-card">
+                <h2>Java Course</h2>
+                <p>Learn the basics of Java and become a proficient developer.</p>
+                <p class="price">Price: $18 (TZS 41,400)</p>
+                <ul>
+                    <li>Understand Java syntax and structure.</li>
+                    <li>Master object-oriented programming principles.</li>
+                    <li>Create Java applications from scratch.</li>
+                    <li>Prepare for Java certification exams.</li>
+                </ul>
+                <button class="cta-btn">Enroll Now</button>
+            </div>
+
+            <div class="course-card">
+                <h2>JavaScript Course</h2>
+                <p>Master JavaScript, the programming language of the web.</p>
+                <p class="price">Price: $20 (TZS 46,000)</p>
+                <ul>
+                    <li>Manipulate the DOM for dynamic web pages.</li>
+                    <li>Create interactive web applications.</li>
+                    <li>Utilize JavaScript libraries and frameworks.</li>
+                </ul>
+                <button class="cta-btn">Enroll Now</button>
+            </div>
+
+            <div class="course-card">
+                <h2>Node.js Course</h2>
+                <p>Dive into server-side programming with Node.js.</p>
+                <p class="price">Price: $25 (TZS 57,500)</p>
+                <ul>
+                    <li>Build scalable web applications with Express.</li>
+                    <li>Learn RESTful API development.</li>
+                    <li>Deploy applications to the cloud.</li>
+                </ul>
+                <button class="cta-btn">Enroll Now</button>
+            </div>
+<!-- New Course: Machine Learning -->
+<div class="course-card">
+    <h2>Machine Learning Course</h2>
+    <p>Learn the foundations and applications of machine learning algorithms.</p>
+    <p class="price">Price: $30 (TZS 69,000)</p>
+    <ul>
+        <li>Understand supervised and unsupervised learning.</li>
+        <li>Work with real-world datasets for model building.</li>
+        <li>Master popular algorithms like linear regression and decision trees.</li>
+        <li>Implement ML models in Python using popular libraries.</li>
+    </ul>
+    <button class="cta-btn">Enroll Now</button>
+</div>
+
+            <div class="course-card">
+                <h2>MySQL Course</h2>
+                <p>Become an expert in database management with MySQL.</p>
+                <p class="price">Price: $22 (TZS 50,600)</p>
+                <ul>
+                    <li>Master SQL queries for data manipulation.</li>
+                    <li>Create and manage databases and tables.</li>
+                    <li>Perform advanced queries and data analysis.</li>
+                </ul>
+                <button class="cta-btn">Enroll Now</button>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <p>&#169; RoiTech Education Solution</p>
+    </footer>
+
+</body>
+
+</html>
