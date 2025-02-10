@@ -5,7 +5,7 @@ const UserPost = require('./../models/post');
 
 // -------------- User CRUD -----------------
 // Create a new user
-const createUser = async (req, res) => {
+const createUser = async(req, res) => {
     try {
         const { username, email, password, isAdmin } = req.body;
         const user = await User.create({ username, email, password, isAdmin });
@@ -17,7 +17,7 @@ const createUser = async (req, res) => {
 };
 
 // Get all users
-const getAllUsers = async (req, res) => {
+const getAllUsers = async(req, res) => {
     try {
         const users = await User.findAll();
         return res.status(200).json(users);
@@ -28,7 +28,7 @@ const getAllUsers = async (req, res) => {
 };
 
 // Update user details
-const updateUser = async (req, res) => {
+const updateUser = async(req, res) => {
     try {
         const { userId } = req.params;
         const { username, email, isAdmin } = req.body;
@@ -51,7 +51,7 @@ const updateUser = async (req, res) => {
 };
 
 // Delete a user
-const deleteUser = async (req, res) => {
+const deleteUser = async(req, res) => {
     try {
         const { userId } = req.params;
         const user = await User.findByPk(userId);
@@ -69,7 +69,7 @@ const deleteUser = async (req, res) => {
 
 // -------------- UserProfile CRUD -----------------
 // Create or update a user profile
-const createOrUpdateProfile = async (req, res) => {
+const createOrUpdateProfile = async(req, res) => {
     try {
         const { userId } = req.params;
         const { bio } = req.body;
@@ -91,7 +91,7 @@ const createOrUpdateProfile = async (req, res) => {
 };
 
 // Get a user's profile
-const getUserProfile = async (req, res) => {
+const getUserProfile = async(req, res) => {
     try {
         const { userId } = req.params;
         const profile = await UserProfile.findOne({ where: { userId } });
@@ -108,7 +108,7 @@ const getUserProfile = async (req, res) => {
 };
 
 // Delete a user profile
-const deleteUserProfile = async (req, res) => {
+const deleteUserProfile = async(req, res) => {
     try {
         const { userId } = req.params;
         const profile = await UserProfile.findOne({ where: { userId } });
@@ -127,7 +127,7 @@ const deleteUserProfile = async (req, res) => {
 
 // -------------- UserPost CRUD -----------------
 // Get all posts for a specific user
-const getUserPosts = async (req, res) => {
+const getUserPosts = async(req, res) => {
     try {
         const { userId } = req.params;
         const posts = await UserPost.findAll({
@@ -143,7 +143,7 @@ const getUserPosts = async (req, res) => {
 };
 
 // Create a new post for a user
-const createPostForUser = async (req, res) => {
+const createPostForUser = async(req, res) => {
     try {
         const { userId } = req.params;
         const { content } = req.body;
@@ -157,7 +157,7 @@ const createPostForUser = async (req, res) => {
 };
 
 // Update a user's post
-const updateUserPost = async (req, res) => {
+const updateUserPost = async(req, res) => {
     try {
         const { postId } = req.params;
         const { content } = req.body;
@@ -179,7 +179,7 @@ const updateUserPost = async (req, res) => {
 };
 
 // Delete a user's post
-const deleteUserPost = async (req, res) => {
+const deleteUserPost = async(req, res) => {
     try {
         const { postId } = req.params;
 
