@@ -1,12 +1,10 @@
 //routes/userRoute.js
 const express = require("express");
 const router = express.Router();
-const {createUser,/*loginUser,*/ otp_verification,findAllUsers, findUser, updateUser, deleteUser} = require("./../controllers/userController");
+const { createUser, /*loginUser,*/ otp_verification, findAllUsers, findUser, updateUser, deleteUser } = require("./../controllers/userController");
 
 //router -> create user route
-router.route('/',()=>{
-    console.log("xjddddddddddddddd")
-}).post(createUser);
+router.route('/').post(createUser);
 
 router.route('/verify').post(otp_verification);
 // Route to handle login
