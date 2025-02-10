@@ -1,11 +1,19 @@
 require("dotenv").config()
 
+
+//db username:
+//host:
+//port:
+//user:
+//password:
+
+
 module.exports = {
     development: {
-        username: 'bgckrxlt',
-        password: 'OQ2TG25MyY8LMSy-NXsSaY4pLGNxXmTy',
-        database: 'bgckrxlt',
-        host: 'salt.db.elephantsql.com',
-        port: 5432
+        username: 'avnadmin',
+        password: 'AVNS_rMwDgY-tb25PHzJxfUk',
+        database: 'defaultdb',
+        host: 'pg-192dc673-silvestiriassey.k.aivencloud.com',
+        port: 10140
     }
 }
