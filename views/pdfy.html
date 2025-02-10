@@ -208,23 +208,23 @@
    
         <!-- New Nav Links -->
         <li class="nav-item">
-          <a class="nav-link" href="profile.html">
+          <a class="nav-link" href="/profile">
             <i class="bi bi-person"></i><span class="white-text"> Profile</span>
           </a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="advert.html">
+          <a class="nav-link" href="/advert">
             <i class="bi bi-info-circle"></i><span class="white-text"> advertisments</span>
           </a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="realtime-editor.html">
+          <a class="nav-link" href="/realtime-editor">
             <i class="bi blink-cursor"></i><span class="white-text">real time editor</span>
           </a>
         </li>
       
         <li class="nav-item">
-          <a class="nav-link" href="pdfy.html">
+          <a class="nav-link" href="/pdfy">
             <i class="bi blink-cursor"></i><span class="white-text">real  time pdf</span>
           </a>
         </li>
@@ -256,7 +256,7 @@
 <div id="main">
 <div id="div1">
 <div id="pdf-main-container">
-	<div id="pdf-loader">roitech education college is loadng book ...</div>
+	<div id="pdf-loader">roitech education solution is loadng book ...</div>
 	<div id="pdf-contents">
 		<div id="pdf-meta">
 			<div id="pdf-buttons">
@@ -275,6 +275,14 @@
 
   <script src="/socket.io/socket.io.js"></script>
   <script>
+
+    const token=localStorage.getItem('token');// Will display the token
+
+    if (token) {
+      // Decode the token to get user data
+      //const userData = parseJwt(token);
+    
+      // Display th
 var  color;
 var colorchooser =document.getElementById("color");
 colorchooser.addEventListener("change",function(e){
@@ -282,9 +290,20 @@ color=e.target.value;
 
 })
 
+document.getElementById('logout').addEventListener('click', () => {
+  // Clear the token cookie
 
+  localStorage.removeItem('token');
+  //document.cookie = 'token=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/';
+  window.location.href = '/login'; // Redirect to login page
+});
 
+//const token=localStorage.getItem('token');// Will display the token
 
+if (!token) {
+
+window.location.href='/login'
+}
 
 
 
@@ -297,7 +316,7 @@ color=e.target.value;
         }
 
         // Retrieve the token from localStorage
-        const token = localStorage.getItem('authToken');
+        //const token = localStorage.getItem('');
 
       
           // Decode the token to get user data
@@ -425,6 +444,10 @@ document.querySelector("#pdf-next").addEventListener('click', function() {
     if(_CURRENT_PAGE != _TOTAL_PAGES)
         showPage(++_CURRENT_PAGE);
 });
+    }
+    else{
+      window.location.href='/login'
+    }
 </script>
 
 
@@ -637,6 +660,10 @@ socket.on("drawing", ({ lastX, lastY, x, y,color }) => {
   ctx.stroke();
 
 });
+
+
+
+
 
 // Voice chat setup
 document.getElementById("startVoice").addEventListener("click", async () => {

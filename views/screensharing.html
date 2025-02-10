@@ -129,6 +129,15 @@
 
             peerConnection.addIceCandidate(new RTCIceCandidate(data.candidate)).catch(e => console.error(e));
         });
+
+
+        document.getElementById('logout').addEventListener('click', () => {
+            // Clear the token cookie
+      
+            localStorage.removeItem('token');
+            //document.cookie = 'token=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/';
+            window.location.href = '/login'; // Redirect to login page
+        });
     </script>
 </body>
 </html>

@@ -155,7 +155,7 @@
       return params.get('id');
     }
 
-    const token = localStorage.getItem('authToken');
+    const token = localStorage.getItem('token');
 
     // Function to decode JWT token
     function parseJwt(token) {
@@ -303,14 +303,17 @@
       };
     } else {
       alert("No valid token found!");
-      window.location.href = 'index.html';
+      window.location.href = 'index1';
     }
 
     document.getElementById("user-name").textContent = parseJwt(token).username;
-    document.getElementById("logout").addEventListener('click', () => {
-      localStorage.removeItem('authToken');
-      window.location.href = 'index.html';
-    });
+    document.getElementById('logout').addEventListener('click', () => {
+      // Clear the token cookie
+
+      localStorage.removeItem('token');
+      //document.cookie = 'token=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/';
+      window.location.href = '/login'; // Redirect to login page
+  });
 
     /*async function handleLike(postId) {
       try {

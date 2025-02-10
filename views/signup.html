@@ -188,7 +188,7 @@
 
     /* Button styles */
     .btn-primary {
-      background-color: #00B4D8;
+      background-color: #34495e;
       border: none;
       color: white;
       font-size: 1.1rem;
@@ -197,6 +197,7 @@
       transition: background-color 0.3s;
     }
 
+  
     .btn-primary:hover {
       background-color: #48C9B0; /* Light teal hover effect */
     }
@@ -233,50 +234,63 @@
   <!-- Computer Frame -->
   <div class="computer">
     <div class="computer-screen">
-      <!-- Content inside the screen -->
+      <img src='/img/comp2.webp' >
+      <img src='/img/comp2.webp' >
+      <img src='/img/comp2.webp' >
+      <img src='/img/comp2.webp' >
+      <img src='/img/comp2.webp' >
+      <img src='/img/comp2.webp' >
+      <div class="dot" style="top: 70%; left: 50%; width: 35px; height: 35px;color:white;">RoiTech education</div>
+      <div class="dot" style="top: 80%; left: 90%; width: 30px; height: 30px;color:white;">e-learning RoiTech</div>
+      <div class="dot" style="top: 20%; left: 10%; width: 18px; height: 18px;color:white;">e-learning</div>
+      <div class="dot" style="top: 30%; left: 80%; width: 25px; height: 25px;color:white;">e-learning training RoiTech</div>
+      <div class="dot" style="top: 60%; left: 50%; width: 35px; height: 35px;">e learning roitech education </div>
+      <div class="dot" style="top: 80%; left: 90%; width: 30px; height: 30px;">e-learning</div>
+      <div class="dot" style="top: 20%; left: 10%; width: 18px; height: 18px;">e-education</div>
+    
     </div>
   </div>
 
   <!-- Layout Container for typing text and form -->
-  <div class="layout-container">
+  <div class="layout-container"  style="display:flex;">
     <!-- Typing Effect Container -->
-    <div class="typing-container">
+    <div class="typing-container" style="flex:1;">
       <h1 class="typing-heading"></h1>
       <h4 class="typing-subheading"></h4>
     </div>
       <!-- Login Container -->
-      <div class="login-container" >
+      <div class="login-container" style="flex:2;">
     <div class="register-container   signup-form shadow" id="j" >
         <div id="signup-section"  class="register-container">
-            <h2 class="text-center" style="color:rgba(5, 5, 117, 0.877)">Sign-Up</h2>
+            <h2 class="text-center" style="color:  #34495e;">Sign-Up</h2>
             <form id="signupForm" >
                 <div class="mb-2">
-                    <label for="username" class="form-label" style="color:rgba(5, 5, 117, 0.877)">Username</label>
+                    <label for="username" class="form-label" style="color:  #34495e;">Username</label>
                     <input type="text" class="form-control" id="username" placeholder="Enter username" required>
                 </div>
                 <div class="mb-2">
-                    <label for="firstname" class="form-label" style="color:rgba(5, 5, 117, 0.877)">First Name</label>
+                    <label for="firstname" class="form-label" style="color:  #34495e;">First Name</label>
                     <input type="text" class="form-control" id="fname" placeholder="Enter First Name" required>
                 </div>
                 <div class="mb-2">
-                    <label for="lastname" class="form-label" style="color:rgba(5, 5, 117, 0.877)">Last Name</label>
+                    <label for="lastname" class="form-label" style="color:  #34495e;">Last Name</label>
                     <input type="text" class="form-control" id="lname" placeholder="Enter Last Name" required>
                 </div>
                 <div class="mb-2">
-                    <label for="email" class="form-label" style="color:rgba(5, 5, 117, 0.877)">Email address</label>
+                    <label for="email" class="form-label" style="color:  #34495e;">Email address</label>
                     <input type="email" class="form-control" id="email" placeholder="Enter email" required>
                 </div>
                 <div class="mb-2">
-                    <label for="password" class="form-label" style="color:rgba(5, 5, 117, 0.877)">Password</label>
+                    <label for="password" class="form-label" style="color:  #34495e;">Password</label>
                     <input type="password" class="form-control" id="password" placeholder="Enter password" required>
                 </div>
                 <div class="mb-2">
                    <input type="checkbox"  id="terms" required>
                   <a class="terms" href="terms.html">Agree to Terms and conditions</a>
                 </div>
-                <button type="submit" class="btn btn-primary" style="color:rgba(5, 5, 117, 0.877)">Sign-Up</button>
+                <button type="submit" class="btn btn-primary btn-block" style="color:rgba(5, 5, 117, 0.877)">Sign-Up</button>
                 <div class="login-btn">
-                    <p>Already have an account? <a class=" " href="index1.html">SignIn</a></p>
+                    <p>Already have an account? <a class=" " href="index1.html" style="color:  #34495e;">SignIn</a></p>
                 </div>
             </form>
         </div>
@@ -359,7 +373,7 @@
                 }
             } catch (error) {
                 console.error('Error:', error);
-                Toast.makeText("an error  occured  durring  signup!", 3000, "#D81C54FF", "j");
+               Toast.makeText("an error  occured  durring  signup!", 3000, "#D81C54FF", "j");
                 // Show the sign-up form again if there's an error
                 document.getElementById('signup-section').style.display = 'none';
             }
@@ -383,7 +397,7 @@
                 const data = await response.json();
                    console.log(response.status)
                 if (response.status === 201) {
-                    Toast.makeText("OTP verified  successfully", 3000, "#30DB69FF", "i");
+                   Toast.makeText("OTP verified  successfully", 3000, "#30DB69FF", "i");
                     window.location.href = 'index1.html'; // Redirect to homepage or desired URL
                 } else {
                     //alert(data.message);
@@ -391,7 +405,7 @@
                 }
             } catch (error) {
                 console.error('Error:', error);
-                Toast.makeText("an error  occured  durring  OTP verification try gain later !", 3000, "#D81C54FF", "i");
+               Toast.makeText("an error  occured  durring  OTP verification try gain later !", 3000, "#D81C54FF", "i");
             }
         });
   </script>
